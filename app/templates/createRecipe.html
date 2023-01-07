@@ -1,0 +1,26 @@
+<HTML>
+	<BODY bgcolor="cyan">
+			<form method="POST" action="">
+			<center>
+					<H1>Create a recipe.</H1> <br>
+					Title <input type = "text" name= "title" /> <br>
+					Cooking Method <input type = "text" name= "cooking_method" /> <br>
+					Cuisine <input type = "text" name= "cuisine" /> <br>
+					Prep Time <input type = "text" name= "prep_time" /> <br>
+					Serves <input type = "text" name= "serves" /> <br>
+					Tags <input type = "text" name= "tags" /> <br>
+					Ingredients <input type = "text" name= "ingredients" /> <br>
+					<input type = "submit">   
+			</form>
+			{% if error == -1 %}
+				Recipe Creation Unsuccessful.
+			{% endif %}
+			{% if error == 1 %}
+				Recipe Creation Successful.
+			{% endif %}
+			<form method = "POST" action="home">
+					<button class="">Return Home</button>
+			</form>
+	</center>
+	</BODY>
+</HTML>

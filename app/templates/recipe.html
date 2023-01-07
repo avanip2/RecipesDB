@@ -1,0 +1,49 @@
+<HTML>
+	<BODY bgcolor="cyan">
+			<center>
+			{% if recipe[0] != None %}
+				<h1>{{ recipe[0] }}</h1> <br>
+			{% endif %}
+			{% if rating != None %}
+				<h1>Rating</h1> <br>
+				<h1>{{ rating }}</h1> <br>
+			{% endif %}
+			<form method = "POST" action="{{ url_for('home') }}">
+					<button class="">Return Home</button>
+			</form>
+			{% if recipe != None %}
+			<form method = "GET" action="{{ url_for('addReview', recipe_id=recid) }}">
+					<button class="">Review this recipe!</button>
+			</form>
+			{% endif %}
+			{% if recipe[1] != None %}
+				<h1>Cooking Method</h1> <br>
+				{% for line in recipe[1] %}
+					<p>{{ line }}</p>
+				{% endfor %}
+			{% endif %}
+			{% if recipe[2] != None %}
+				<h1>Cuisine</h1> <br>
+				{% for line in recipe[2] %}
+					<p>{{ line }}</p>
+				{% endfor %}
+			{% endif %}
+			{% if recipe[3] != None %}
+				<h1>Image</h1> <br>
+				<img src="{{ recipe[3] }}" alt="Food Image" width="100"/> <br>
+			{% endif %}
+			{% if recipe[4] != None %}
+				<h1>Prep Time</h1> <br>
+				<p>{{ recipe[4] }}</p> <br>
+			{% endif %}
+			{% if recipe[5] != None %}
+				<h1>Serves</h1> <br>
+				<p>{{ recipe[5] }}</p> <br>
+			{% endif %}
+			{% if recipe[6] != None %}
+				<h1>Ingredients</h1> <br>
+				<p>{{ recipe[6] }}</p> <br>
+			{% endif %}
+			</center>
+	</BODY>
+</HTML>

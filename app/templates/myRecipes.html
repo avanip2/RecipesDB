@@ -1,0 +1,45 @@
+<HTML>
+	<BODY bgcolor="cyan">
+			<center>
+			<H1>My Recipes</H1> <br>
+			<form method = "POST" action="home">
+					<button class="">Return Home</button>
+			</form>
+			<form action="createRecipe">
+        <button class="btn btn-danger btn-lg">Create Recipe</button>
+			</form>
+			{% if recipes != None %}
+			{% block content %}
+			<table id="recipe-data" class="table table-striped">
+				<thead>
+				<tr>
+						<th>Recipes</th>
+				</tr>
+				</thead>
+				<tbody>
+				{% for recipe in recipes %}
+						<tr>
+						<td>
+							<form method = "POST" action="recipe/{{ recipe[0] }}">
+								<button class="">{{ recipe[1] }}</button>
+							</form>
+						</td>
+						<!-- <td>
+							<form method = "POST" action="editRecipe/{{ recipe[0] }}">
+								<button class="">Edit</button>
+							</form>
+						</td> -->
+						<td>
+							<form method = "POST" action="deleteRecipe/{{ recipe[0] }}">
+								<button class="">Delete</button>
+							</form>
+						</td>
+						</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+			{% endblock %}
+			{% endif %}
+			</center>
+	</BODY>
+</HTML>

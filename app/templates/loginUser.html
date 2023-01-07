@@ -1,0 +1,24 @@
+<HTML>
+	<BODY bgcolor="cyan">
+			<form method="POST" action="">
+			<center>
+					<H1>Login</H1> <br>
+					Email <input type = "text" name= "email" /> <br>
+					Password <input type = "password" name= "password" /> <br>
+					<input type = "submit">   
+			</form>
+			{% if name != None %}
+				Welcome, {{name}}!
+			{% endif %}
+			{% if error == 1 %}
+				Login Unsuccessful - Email is wrong.
+			{% endif %}
+			{% if error == 2 %}
+				Login Unsuccessful - Password is wrong.
+			{% endif %}
+			<form method = "POST" action="home">
+					<button class="">Return Home</button>
+			</form>
+	</center>
+	</BODY>
+</HTML>

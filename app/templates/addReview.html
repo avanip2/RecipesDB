@@ -1,0 +1,62 @@
+<HTML>
+    <style>
+        .slidecontainer {
+          width: 100%;
+        }
+        
+        .slider {
+          -webkit-appearance: none;
+          width: 150px;
+          height: 25px;
+          background: #ffffff;
+          outline: none;
+          opacity: 0.7;
+          -webkit-transition: .2s;
+          transition: opacity .2s;
+        }
+        
+        .slider:hover {
+          opacity: 1;
+        }
+        
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          background: #5100ff;
+          cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          background: #5100ff;
+          cursor: pointer;
+        }
+        </style>
+    <BODY bgcolor="cyan">
+    <center>
+			{% if recipe_name != None %}
+        <form method="POST" action="">
+            <H1>Add a New Review for {{ recipe_name }}</H1> <br>
+            Review <input type = "text" name = "Comment" /> <br>
+            <div class="slidecontainer">
+                <p>How many stars? (1-5):</p>
+                <input type="range" min="1" max="5" value="1" class="slider" id="myRange" name="stars">
+            </div>
+            <input type = "submit">
+        </form>
+        <form action="{{ url_for('home') }}">
+            <button class="">Return Home</button>
+        </form>
+			{% endif %}
+			{% if error == -1 %}
+				Add Review Unsuccessful.
+			{% endif %}
+			{% if error == 1 %}
+				Add Review Successful.
+			{% endif %}
+    </center>
+    </BODY>
+    </HTML>

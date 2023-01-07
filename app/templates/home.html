@@ -1,0 +1,45 @@
+<HTML>
+    <BODY bgcolor="cyan">
+    
+    <center>
+    <H1>Eating My Feelings</H1> <br>
+		{% if 'user' in session %}
+			Logged in as {{ session['user'] }}!
+			<form action="logoutUser">
+				<button class="btn btn-danger btn-lg">Logout User</button>
+			</form>
+			<form action="updatePassword">
+					<button class="btn btn-danger btn-lg">Update Password</button>
+			</form>
+			<form action="deleteUser">
+        <button class="btn btn-danger btn-lg">Delete User</button>
+			</form>
+			<form action="myRecipes">
+        <button class="btn btn-danger btn-lg">My Recipes</button>
+			</form>
+			<form action="imFeelingLucky">
+        <button class="btn btn-danger btn-lg">Take a chance?</button>
+    	</form>
+		{% else %}
+			<form action="registerUser">
+				<button class="btn btn-danger btn-lg">Register User</button>
+			</form>
+			<form action="loginUser">
+				<button class="btn btn-danger btn-lg">Login User</button>
+			</form>
+		{% endif %}
+    <form action="searchRecipesByTag">
+        <button class="btn btn-danger btn-lg">Search Recipes By Tag</button>
+    </form>
+    <form action="searchRecipesByUser">
+        <button class="btn btn-danger btn-lg">Search Recipes By User</button>
+    </form>
+    <form action="searchRecipesByName">
+        <button class="btn btn-danger btn-lg">Search Recipes By Name</button>
+    </form>
+    <form action="searchRecipesByIngredient">
+        <button class="btn btn-danger btn-lg">Search Recipes By Ingredient</button>
+    </form>
+    </center>
+    </BODY>
+</HTML>

@@ -1,0 +1,36 @@
+<HTML>
+    <BODY bgcolor="cyan">
+        <form method="POST" action="">
+        <center>
+            <H1>Search Recipes By Ingredient </H1> <br>
+            Ingredient <input type = "text" name= "ingredient" /> <br>
+            <input type = "submit">   
+        </form>
+        <form method = "POST" action="home">
+            <button class="">Return Home</button>
+        </form>
+        {% if recipes != None %}
+        {% block content %}
+        <table id="recipe-data" class="table table-striped">
+					<thead>
+					<tr>
+							<th>Recipes</th>
+					</tr>
+					</thead>
+					<tbody>
+					{% for recipe in recipes %}
+							<tr>
+							<td>
+								<form method = "POST" action="recipe/{{ recipe[0] }}">
+									<button class="">{{ recipe[1] }}</button>
+								</form>
+							</td>
+							</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+        {% endblock %}
+        {% endif %}
+        </center>
+    </BODY>
+</HTML>

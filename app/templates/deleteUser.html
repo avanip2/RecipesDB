@@ -1,0 +1,21 @@
+<HTML>
+    <BODY bgcolor="cyan">
+        <form method="POST" action="">
+        <center>
+            <H1>Delete User</H1> <br>
+            Input password to confirm that you want to delete your account. <br>
+            Password <input type = "password" name = "password" /> <br>
+            <input type = "submit">   
+        </form>
+				{% if error == -1 %}
+					User Deletion Unsuccessful - password is incorrect.
+				{% endif %}
+				{% if error == 1 %}
+					User Deletion Successful.
+				{% endif %}
+        <form method = "POST" action="home">
+            <button class="">Return Home</button>
+        </form>
+    </center>
+    </BODY>
+</HTML>
